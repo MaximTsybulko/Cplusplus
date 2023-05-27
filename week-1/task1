@@ -1,1 +1,23 @@
+#include <iostream>
+using namespace std;
 
+int main(void)
+{
+
+	int vector[] = { 3, -5, 7, 10, -4, 14, 5, 2, -13 };
+
+	int n = sizeof(vector) / sizeof(vector[0]);
+
+	int* max_element = vector;
+	for (int* i = vector + 1; i < vector + n; i++)
+	{
+		if (*i > *max_element)
+		{
+			max_element = i;
+		}
+	}
+
+	cout << "The maximum element is: " << *max_element << endl;
+
+	return 0;
+}
